@@ -13,7 +13,9 @@
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "db:generate": "drizzle-kit generate",
     "sources:check": "node scripts/check-sources.mjs",
-    "test:engine": "tsx scripts/test-engine.ts"
+    "test:engine": "tsx scripts/test-engine.ts",
+    "build:pages": "vite build --config vite.pages.config.ts",
+    "preview:pages": "vite preview --config vite.pages.config.ts --host 127.0.0.1 --port 4173"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

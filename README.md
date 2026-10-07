@@ -1,6 +1,10 @@
 # Love OS｜恋爱小白操作系统
 少猜心理，多看行为；少学套路，多做验证。
 
+**在线使用：[Love OS](https://taskyoooo.github.io/love-os/)**
+
+在线版部署于GitHub Pages，使用本地规则分析，档案保存在访问者自己的浏览器；不上传关系记录。本地版本支持配置独立AI服务。
+
 ## 本地使用
 需要 Node 22.13+。
 ```
@@ -34,3 +38,6 @@ MVP五Tab与核心闭环，投入、体检、急救、即时周报与备份。11
 
 ## 开源许可与贡献
 本项目采用 [MIT License](LICENSE)。来源与依赖保留各自声明，详见 [第三方声明](THIRD_PARTY_NOTICES.md)。Love Docs 正文未复制或分发。欢迎按 [贡献指南](CONTRIBUTING.md) 提交改进。隐私与本地使用边界见 [SECURITY.md](SECURITY.md)。
+
+## GitHub Pages部署
+推送到main后，Pages工作流执行测试、静态构建并自动部署。`npm run build:pages`使用同一应用组件生成GitHub Pages静态版本；`npm run preview:pages`可预览，访问 `/love-os/`。Pages版本不包含服务端API或密钥。
