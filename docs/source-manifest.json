@@ -1,0 +1,26 @@
+[
+  {
+    "id": "goutoujunshi",
+    "url": "https://github.com/shengjidaguai-china/goutoujunshi",
+    "commit": "6db7354a4002dc7c448a9c87ffdad8132570c9d3",
+    "license": "MIT",
+    "synced_at": "2026-10-07",
+    "policy": "人工审阅后发布；不自动覆盖知识卡"
+  },
+  {
+    "id": "conversation-playbook",
+    "url": "https://github.com/kapamelia/conversation-playbook",
+    "commit": "b38b5c3280b5f5390e430487499f4026d639ca9b",
+    "license": "MIT",
+    "synced_at": "2026-10-07",
+    "policy": "人工审阅后发布；不自动覆盖知识卡"
+  },
+  {
+    "id": "love-docs",
+    "url": "https://github.com/lhqs/love-docs",
+    "commit": "1484f099c620c92dcd8d141442b47b644b79c572",
+    "license": "NOASSERTION",
+    "synced_at": "2026-10-07",
+    "policy": "人工审阅后发布；不自动覆盖知识卡"
+  }
+]

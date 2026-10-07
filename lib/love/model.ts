@@ -1,0 +1,9 @@
+export const stages=['认识','接触','暧昧','约会','稳定关系','长期关系'] as const;
+export type Stage=typeof stages[number];
+export type Event={id:string;personId:string;date:string;text:string;kind:string;actor:'TA'|'我'|'双方'|'未知';cost:string;status:'已发生'|'承诺中'|'已兑现'|'未兑现';type:'FACT'|'USER_INTERPRETATION'|'UNKNOWN';risk:'无'|'拒绝发展'|'边界侵犯'|'威胁暴力';image?:string};
+export type Person={id:string;name:string;met:string;via:string;stage:Stage;notes:string;needs:string;boundaries:string};
+export type Health={date:string;joy:string;engagement:string;value:string;pressure:string;agency:string;reason:string};
+export type Store={version:1;people:Person[];events:Event[];selected:string;health:Health[]};
+export const today=()=>new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Shanghai'});
+export const uid=()=>crypto.randomUUID();
+export function demo():Store {const date=(n:number)=>{const d=new Date();d.setDate(d.getDate()-n);return d.toLocaleDateString('en-CA',{timeZone:'Asia/Shanghai'})}; const p:Person={id:'demo',name:'小林',met:date(12),via:'朋友聚会（虚拟示例）',stage:'接触',notes:'喜欢摄影、徒步。价值观与未来计划仍未知。',needs:'相互主动，安排明确',boundaries:'保留自己的生活，不接受催促与控制'}; const chats=['我：那天聊摄影很开心。TA：我也是，你平时拍什么？','TA：今天路过一家书店，想起你说的那本书。','我：周六去看展吗？TA：可以，下午两点吧。','TA：我订好了，门口见。','我：今天很开心。TA：我也是，下次一起走走。','TA：最近项目忙，周五再聊。','我：这张照片拍得真好。TA：谢谢！','TA：周日有空吗？我找了条散步路线。','我：好呀。TA：下午三点地铁口见。','TA：下次带你去那家咖啡店，等排班确定。'];const events:Event[]=chats.map((text,i)=>({id:`c${i}`,personId:p.id,date:date(11-i),text,kind:'聊天',actor:i%2?'TA':'我',cost:'精力',status:'已发生',type:'FACT',risk:'无'})); const real=[['朋友聚会认识','认识','双方'],['一起看展两小时，按约到场','见面','双方'],['TA提前订票并兑现','现实帮助','TA'],['第二次散步见面，按约到场','见面','双方'],['TA提议下次咖啡，时间尚未确定','邀约','TA']];real.forEach((r,i)=>events.push({id:`r${i}`,personId:p.id,date:date([12,8,8,3,1][i]),text:r[0],kind:r[1],actor:r[2] as Event['actor'],cost:'时间与安排',status:i===4?'承诺中':'已兑现',type:'FACT',risk:'无'}));return {version:1,people:[p],events,selected:p.id,health:[]};}
